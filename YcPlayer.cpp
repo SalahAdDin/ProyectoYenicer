@@ -14,29 +14,49 @@
 #include "StdAfx.h"
 #include "YcPlayer.h"
 
-CYcPlayer::CYcPlayer()
+CYcPlayer::CYcPlayer(void)
 {
-
+	g_pGame->GetGameRules()->AddHitListener(this);
 }
 
-CYcPlayer::~CYcPlayer()
-{
 
+CYcPlayer::~CYcPlayer(void)
+{
+	g_pGame->GetGameRules()->RemoveHitListener(this);
 }
 
-bool CYcPlayer::Init(IGameObject *pGameObject)
-{   
-   gEnv->pLog->Log("CYcPlayer::Init is working");
-   return CPlayer::Init(pGameObject);
+bool CYcPlayer::Init(IGameObject * pGameObject)
+{
+	return CPlayer::Init(pGameObject);
+}
+
+void CYcPlayer::Revive( bool fromInit )
+{
+	CPlayer::Revive(fromInit);
 }
 
 void CYcPlayer::Update(SEntityUpdateContext& ctx, int updateSlot)
 {
-//This stops it from spamming the console
-   for(int i = 0; i < 1; i++)
-   { 
-     i++;
-   gEnv->pLog->Log("CYcPlayer::Update is working");;
+	CPlayer::Update(ctx, updateSlot);
 }
-   CPlayer::Update(ctx, updateSlot);
+
+void CYcPlayer::FullSerialize( TSerialize ser )
+{
+
+	CPlayer::FullSerialize(ser);
+}
+
+void CYcPlayer::OnHit(const HitInfo& hitInfo)
+{
+
+}
+
+void CYcPlayer::OnExplosion(const ExplosionInfo&)
+{
+
+}
+
+void CYcPlayer::OnServerExplosion(const ExplosionInfo&)
+{
+
 }

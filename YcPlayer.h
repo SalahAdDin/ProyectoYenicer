@@ -22,9 +22,17 @@ class CYcPlayer : public CPlayer{
 		CYcPlayer();	//Constructor
 		virtual ~CYcPlayer();	//Destructor
 
-	//Overode from CPlayer
-    virtual bool Init(IGameObject *pGameObject);
-    virtual void Update(SEntityUpdateContext& ctx, int updateSlot);
-   };
+		//Derived From CPlayer
+		virtual bool Init(IGameObject * pGameObject);
+		virtual void Revive( bool fromInit );
+		virtual void Update(SEntityUpdateContext& ctx, int updateSlot);
+		virtual void FullSerialize( TSerialize ser );
+
+		//Derived From IHitListener
+		virtual void OnHit(const HitInfo&);
+		virtual void OnExplosion(const ExplosionInfo&);
+		virtual void OnServerExplosion(const ExplosionInfo&);
+};
+
 
 #endif
