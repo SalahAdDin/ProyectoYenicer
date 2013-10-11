@@ -1,0 +1,46 @@
+<Graph Description="" Group="" enabled="1" MultiPlayer="ClientServer">
+ <Nodes>
+  <Node Id="1" Class="Start" pos="-240,10,0" flags="0">
+   <Inputs InGame="1" InEditor="1"/>
+  </Node>
+  <Node Id="2" Class="Logic:Any" pos="-90,10,0" flags="0">
+   <Inputs />
+  </Node>
+  <Node Id="3" Class="System:ConsoleVariable" pos="40,-70,0" flags="0">
+   <Inputs CVar="g_tpview_enable" Value="1"/>
+  </Node>
+  <Node Id="4" Class="System:ConsoleVariable" pos="40,20,0" flags="0">
+   <Inputs CVar="g_tpview_control" Value="1"/>
+  </Node>
+  <Node Id="5" Class="System:ConsoleVariable" pos="40,200,0" flags="0">
+   <Inputs CVar="goc_enable" Value="1"/>
+  </Node>
+  <Node Id="6" Class="System:ConsoleVariable" pos="40,110,0" flags="0">
+   <Inputs CVar="g_tpview_force_goc" Value="1"/>
+  </Node>
+  <Node Id="7" Class="System:ConsoleVariable" pos="40,-160,0" flags="0">
+   <Inputs CVar="cl_nearPlane" Value="0.011"/>
+  </Node>
+  <Node Id="8" Class="System:ConsoleVariable" pos="290,-70,0" flags="0">
+   <Inputs CVar="goc_targetx" Value="0.3"/>
+  </Node>
+  <Node Id="9" Class="System:ConsoleVariable" pos="290,20,0" flags="0">
+   <Inputs CVar="goc_targety" Value="-2"/>
+  </Node>
+  <Node Id="10" Class="System:ConsoleVariable" pos="290,110,0" flags="1">
+   <Inputs CVar="goc_targetz" Value="-0.4"/>
+  </Node>
+ </Nodes>
+ <Edges>
+  <Edge nodeIn="2" nodeOut="1" portIn="in1" portOut="output" enabled="1"/>
+  <Edge nodeIn="3" nodeOut="2" portIn="Set" portOut="out" enabled="1"/>
+  <Edge nodeIn="4" nodeOut="2" portIn="Set" portOut="out" enabled="1"/>
+  <Edge nodeIn="5" nodeOut="2" portIn="Set" portOut="out" enabled="1"/>
+  <Edge nodeIn="6" nodeOut="2" portIn="Set" portOut="out" enabled="1"/>
+  <Edge nodeIn="7" nodeOut="2" portIn="Set" portOut="out" enabled="1"/>
+  <Edge nodeIn="8" nodeOut="3" portIn="Set" portOut="CurValue" enabled="1"/>
+  <Edge nodeIn="9" nodeOut="4" portIn="Set" portOut="CurValue" enabled="1"/>
+  <Edge nodeIn="10" nodeOut="6" portIn="Set" portOut="CurValue" enabled="1"/>
+ </Edges>
+ <GraphTokens />
+</Graph>
