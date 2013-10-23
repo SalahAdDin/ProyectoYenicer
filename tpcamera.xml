@@ -3,12 +3,20 @@
   <Node Id="4" Class="Game:Start" pos="-20,160,0" flags="0">
    <Inputs InGame="1" InEditor="1"/>
   </Node>
-  <Node Id="5" Class="FeatureTest:SimulateInput" pos="184,256,0" flags="1">
+  <Node Id="5" Class="FeatureTest:SimulateInput" pos="150,40,0" flags="0">
    <Inputs ActionInput="thirdperson" Value="0"/>
+  </Node>
+  <Node Id="6" Class="Debug:ConsoleVariable" pos="160,160,0" flags="0">
+   <Inputs CVar="cl_tpvDist" Value="1.9"/>
+  </Node>
+  <Node Id="7" Class="Debug:ConsoleVariable" pos="160,260,0" flags="1">
+   <Inputs CVar="cl_tpvYaw " Value="0"/>
   </Node>
  </Nodes>
  <Edges>
   <Edge nodeIn="5" nodeOut="4" portIn="Press" portOut="output" enabled="1"/>
+  <Edge nodeIn="6" nodeOut="4" portIn="Set" portOut="output" enabled="1"/>
+  <Edge nodeIn="7" nodeOut="4" portIn="Set" portOut="output" enabled="1"/>
  </Edges>
  <GraphTokens />
 </Graph>
