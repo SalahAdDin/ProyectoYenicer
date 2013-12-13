@@ -1,0 +1,6 @@
+<download name="nosebugee" type="Map">
+ <index src="filelist.xml" dest="filelist.xml"/>
+ <files>
+  <file src="level.pak" dest="level.pak" size="2775248" md5="46d51c7c3f946b0e94586aa60923a272"/>
+ </files>
+</download>
